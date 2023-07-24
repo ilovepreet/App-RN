@@ -1,0 +1,14 @@
+ul{
+display: flex;
+list-style: none;}
+li span{
+    font-size: large ;
+    font-weight: 600;
+}
+
+.container{padding: 100px;
+background-color:slategrey}
+h1{
+    text-align: center;
+}
+

@@ -67,22 +67,25 @@ function App() {
   };
 
   return (
-    <div>
+    <div className='container'>
+      <h1>MyApp</h1>
       <form onSubmit={handlSubmit}>
-        <p>{JSON.stringify(form)}</p>
-        <span>Username</span>
-        <input type="text" name="username" value={form.username || ''} onChange={handleForm}></input>
-        <span>Message</span>
-        <input type="text" name="message" value={form.message || ''} onChange={handleForm}></input>
-        <input type="submit"></input>
-      </form>
+      <input type="hidden" name="_id" value={form._id || ''} />
+<div class="mb-3">
+<label for="exampleFormControlInput1" class="form-label">Heading</label>
+<input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter the Heading" name="username" value={form.username || ''} onChange={handleForm} />
+</div>
+      <label for="exampleFormControlTextarea1" class="form-label">Message</label>
+<textarea class="form-control" id="exampleFormControlTextarea1"  placeholder="Enter the Message" name="message" rows="3" value={form.message || ''} onChange={handleForm}></textarea>
+      <input type="submit" class="btn btn-success" />
+    </form>
       <div>
         <ul>
           {users.map(user => (
             <li key={user._id}>
-              {user.username} <p>{user.message}</p>
-              <button className='delete' onClick={() => handleDelete(user._id)}>Delete</button>
-              <button className='update' onClick={() => handleUpdate(user._id)}>Update</button>
+              <span>{user.username}</span> <p>{user.message}</p>
+              <button className="btn btn-outline-danger" onClick={() => handleDelete(user._id)}>Delete</button>
+              <button className='btn btn-outline-warning' onClick={() => handleUpdate(user._id)}>Update</button>
             </li>
           ))}
         </ul>
